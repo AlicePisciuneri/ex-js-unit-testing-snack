@@ -137,7 +137,49 @@ npm fa: jest --watchAll
 10) test fallito FAIL RED
 
 11) GREEN (step minimo) — Importare la funzione nel test Apri getinItial.test.js 
-12) 
+12) scrivo funzione corretta 
+    function getInitials(fullName) {
+    const names = fullName.split(" ");
+    return names[0][0] + names[1][0];
+}
+
+SPIEGAZIONE 
+function getInitials(fullName) {  creo una funzione
+# prende una stringa tipo "Mario Rossi"
+const names = fullName.split(" ");
+
+# .split(" ") = divide la stringa quando trova uno spazio
+
+"Mario Rossi" diventa:  ["Mario", "Rossi"]
+names è quindi un array con due parole.
+# return names[0][0] + names[1][0];
+names[0] = prima parola → "Mario"
+[0] dopo = prima lettera → "M"
+names[1] = seconda parola → "Rossi" [0] = "R"
+
++ unisce le due lettere → "MR"
+
+il test passa!
+
+
+# Snack 2
+Creare un test che verifichi la seguente descrizione:
+👉 "La funzione createSlug restituisce una stringa in lowercase."
+
+1) Nella tua cartella progetto crea un file chiamato: createSlug.test.js
+
+Nel web uno slug è: una versione semplice e pulita di un testo, usata negli URL.
+Stiamo costruendo una funzione che: prende un testo normale e lo rende pronto per essere usato in un URL.
+2) creo il test nel file test 
+   test('creare una funzione che restituisca una stringa in lowercase', () => {
+    const result = createSlug("QUESTO È UN TEST ");    chiamo la funzione con una stringa tutta maiuscola.
+                                                       salvo il risultato in result.
+    expect(result).tobe("questo è un test");
+    });
+
+3) Vai in console Lancia: npm run test  FALLITO!! OK 
+
+
 
 
 
